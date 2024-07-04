@@ -28,7 +28,7 @@
     <fragment
         android:id="@+id/NavCadastrarFragment"
         android:name="com.todolist.CadastrarFragment"
-        android:label="@string/first_fragment_label"
+        android:label="Componente de cadastro"
         tools:layout="@layout/fragment_cadastrar">
     </fragment>
 </navigation>

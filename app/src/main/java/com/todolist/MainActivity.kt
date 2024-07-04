@@ -47,8 +47,9 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_settings -> true
             R.id.cadastrar_tarefa -> {
-                val navController = findNavController(R.id.cadastrar_fragment)
-                return navController.navigateUp(appBarConfiguration)
+                val navController = findNavController(R.id.nav_host_fragment_content_main)
+                navController.navigate(R.id.NavCadastrarFragment)
+                return true
             }
             else -> super.onOptionsItemSelected(item)
         }
