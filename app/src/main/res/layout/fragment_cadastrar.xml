@@ -23,6 +23,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:hint="Titulo:" />
@@ -40,25 +41,34 @@
             app:layout_constraintTop_toBottomOf="@id/TituloCadastrarTarefa">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputDescricao"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:hint="descricao:" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <DatePicker
-            android:id="@+id/dataCadastrarTarefa"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/DataCadastrarTarefa"
+            android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:maxDate="01/01/2028"
-            android:minDate="01/01/2022"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/DescricaoCadastrarTarefa" />
+            app:layout_constraintTop_toBottomOf="@+id/DescricaoCadastrarTarefa">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputData"
+                android:clickable="true"
+                android:focusable="false"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:hint="dd/mm/aaaa" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/botaoSalvarForm"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="48dp"
@@ -68,7 +78,7 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dataCadastrarTarefa" />
+            app:layout_constraintTop_toBottomOf="@+id/DataCadastrarTarefa" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
