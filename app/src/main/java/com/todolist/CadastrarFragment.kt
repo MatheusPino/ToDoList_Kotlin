@@ -1,6 +1,7 @@
 package com.todolist
 
 import android.app.DatePickerDialog
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,8 @@ import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
 import com.google.android.material.textfield.TextInputEditText
+import com.todolist.repository.IRepository
+import com.todolist.repository.RepositoryImpl
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -20,6 +23,7 @@ class CadastrarFragment : Fragment() {
     private lateinit var data: TextInputEditText
     private lateinit var button: Button
     private val calendario = Calendar.getInstance()
+    private lateinit var repository: IRepository
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +38,15 @@ class CadastrarFragment : Fragment() {
         data.setOnClickListener {
             mostrarCalendario()
         }
+        button.setOnClickListener {
+            salvarForm()
+        }
+        repository = RepositoryImpl(
+            sharedPreference = requireContext().getSharedPreferences(
+                "lista_tarefas",
+                Context.MODE_PRIVATE
+            )
+        )
         return view
     }
 
@@ -57,6 +70,15 @@ class CadastrarFragment : Fragment() {
         val formato = "dd/MM/yyyy"
         val dateFormat = SimpleDateFormat(formato, Locale.US)
         data.setText(dateFormat.format(calendario.time))
+    }
+
+    fun salvarForm() {
+        val tarefa = Tarefa(
+            titulo = titulo.text.toString(),
+            descricao = descricao.text.toString(),
+            data = data.text.toString()
+        )
+        val result = repository.salvar(key = "tarefa 1", tarefa)
     }
 
     companion object {
