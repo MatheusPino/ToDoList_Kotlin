@@ -1,4 +1,4 @@
-package com.todolist
+package com.todolist.view
 
 import android.app.DatePickerDialog
 import android.content.Context
@@ -8,9 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.DatePicker
-import android.widget.EditText
 import com.google.android.material.textfield.TextInputEditText
+import com.todolist.R
+import com.todolist.model.Tarefa
 import com.todolist.repository.IRepository
 import com.todolist.repository.RepositoryImpl
 import java.text.SimpleDateFormat
@@ -78,7 +78,7 @@ class CadastrarFragment : Fragment() {
             descricao = descricao.text.toString(),
             data = data.text.toString()
         )
-        val result = repository.salvar(key = "tarefa 1", tarefa)
+        val result = repository.salvar(key = tarefa.titulo, tarefa)
     }
 
     companion object {

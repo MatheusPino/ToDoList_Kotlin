@@ -40,6 +40,7 @@ android {
 
 dependencies {
 
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
     implementation ("com.google.code.gson:gson:2.8.9")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
