@@ -18,4 +18,10 @@
         android:label="Componente de cadastro"
         tools:layout="@layout/fragment_cadastrar">
     </fragment>
+    <fragment
+        android:id="@+id/Recompensas"
+        android:name="com.todolist.view.RecompensasFragment"
+        android:label="Tela de recompensas"
+        tools:layout="@layout/fragment_recompensas">
+    </fragment>
 </navigation>

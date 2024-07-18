@@ -3,8 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.todolist.MainActivity">
     <item
-        android:id="@+id/cadastrar_tarefa"
+        android:id="@+id/home"
+        android:icon="@drawable/ic_heart"
         android:orderInCategory="100"
-        android:title="@string/cadastrar_tarefa"
+        android:title="home"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/recompensas"
+        android:icon="@drawable/ic_shop"
+        android:orderInCategory="100"
+        android:title="recompensas"
         app:showAsAction="never" />
 </menu>
