@@ -15,10 +15,6 @@ import java.util.concurrent.TimeUnit
 
 class TarefaAdapter(private val context: Context, private val tarefas: List<Tarefa>) :
     RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
-    override fun equals(other: Any?): Boolean {
-        return super.equals(other)
-    }
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -55,7 +51,7 @@ class TarefaAdapter(private val context: Context, private val tarefas: List<Tare
     }
 
     override fun onBindViewHolder(
-        holder: TarefaAdapter.TarefaViewHolder,
+        holder: TarefaViewHolder,
         position: Int,
         payloads: MutableList<Any>
     ) {
@@ -63,7 +59,7 @@ class TarefaAdapter(private val context: Context, private val tarefas: List<Tare
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return tarefas.size
     }
 
     class TarefaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

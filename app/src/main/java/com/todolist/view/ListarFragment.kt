@@ -35,6 +35,7 @@ class ListarFragment : Fragment() {
 
         adapter = TarefaAdapter(requireContext(), tarefas)
 
+        recyclerView.adapter = adapter
     }
 
     override fun onCreateView(

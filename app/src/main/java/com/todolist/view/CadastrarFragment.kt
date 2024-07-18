@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.findNavController
 import com.google.android.material.textfield.TextInputEditText
 import com.todolist.R
 import com.todolist.model.Tarefa
@@ -79,10 +80,7 @@ class CadastrarFragment : Fragment() {
             data = data.text.toString()
         )
         val result = repository.salvar(key = tarefa.titulo, tarefa)
-    }
-
-    companion object {
-
-
+        val navController = activity?.findNavController(R.id.nav_host_fragment_content_main)
+        if (result) navController?.navigate(R.id.ListarFragment)
     }
 }
